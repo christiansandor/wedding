@@ -6,6 +6,8 @@ $('#days').text(days);
 
 var $window = $(window);
 var $header = $('header').eq(0);
+var $heroBackground = $('#hero .background');
+
 var activeClassName = 'active';
 var area = 100;
 var isActive = false;
@@ -22,4 +24,6 @@ $window.scroll(_ => {
         $header.removeClass(activeClassName);
         isActive = false;
     }
+
+    $heroBackground.attr('style', 'top:' + Math.floor(top / 2) + 'px');
 });

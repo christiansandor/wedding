@@ -131,9 +131,10 @@ main:not(#hero) {
   position: relative;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
   background: $grey-900;
 
-  &::before {
+  .background {
     display: block;
     content: '';
     position: absolute;
@@ -142,6 +143,7 @@ main:not(#hero) {
     z-index: 0;
     height: 100%;
     width: 100%;
+    transition: top ease;
     opacity: .4;
     background: no-repeat center center / cover;
     background-image: url("/images/mink.jpg");
