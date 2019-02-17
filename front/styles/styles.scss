@@ -21,7 +21,11 @@ html {
   color: $grey-900;
   background-color: $grey-100;
   font-family: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
-  font-size: 16px;
+  font-size: 12px;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 }
 
 .font-handwriting {
@@ -41,11 +45,15 @@ header {
   top: 0;
   left: 0;
   z-index: 10;
-  height: $header-height;
   width: 100%;
   transition: transform .2s ease;
   transform: translateY(-100%);
-  font-size: getFontSize(3);
+  font-size: getFontSize(2);
+  box-shadow: $shadow-header;
+
+  @include desktop {
+    font-size: getFontSize(3);
+  }
 
   &.active {
     transform: none;
@@ -56,17 +64,37 @@ header {
     align-items: baseline;
     justify-content: space-between;
     height: 100%;
-    padding: 30px 20px;
+    padding: 24px 20px;
+  }
+
+  .logo,
+  .logo-mobile {
+    @extend .font-handwriting;
+    
+    color: $primary-500;
+    text-decoration: none;
+    font-size: getFontSize(4);
+  }
+
+  .logo-mobile {
+    @include desktop {
+      display: none;
+    }
   }
 
   .logo {
-    border-radius: $rounded-circle;
-    font-size: getFontSize(6);
-    color: $primary-500;
-    text-decoration: none;
+    display: none;
+
+    @include desktop {
+      display: block;
+      border-radius: $rounded-circle;
+      color: $primary-500;
+      text-decoration: none;
+      font-size: getFontSize(6);
+    }
   }
 
-  a:not(.logo) {
+  a:not(.logo):not(.logo-mobile) {
     margin-left: getSizedValue(6);
     text-decoration: none;
     transition: color .2s ease;
@@ -74,6 +102,10 @@ header {
     color: $grey-400;
     text-transform: uppercase;
     font-weight: normal;
+    
+    @include desktop {
+      font-size: getFontSize(2);
+    }
 
     &:hover,
     &.active {
@@ -83,28 +115,11 @@ header {
 }
 
 main:not(#hero) {
-  $main-padding: $header-height + 50px;
-
   position: relative;
-  padding: $main-padding 0;
+  padding: 40px 10px;
 
-  &::before,
-  &::after {
-    display: block;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    height: $main-padding;
-    width: 100%;
-    background: linear-gradient($light 0%, rgba(black, 0) 100%);
-  }
-
-  &::after {
-    top: auto;
-    bottom: 0;
-    background: linear-gradient(rgba(black, 0) 0%, $light 100%);
+  @include desktop {
+    padding: 100px 0;
   }
 }
 
@@ -127,8 +142,7 @@ main:not(#hero) {
     z-index: 0;
     height: 100%;
     width: 100%;
-    opacity: .5;
-    filter: saturate(.6);
+    opacity: .4;
     background: no-repeat center center / cover;
     background-image: url("/images/mink.jpg");
   }
@@ -168,7 +182,10 @@ main:not(#hero) {
 }
 
 #elerhetosegek {
+  position: relative;
+  z-index: 2;
   background: $primary-100;
+  box-shadow: $shadow-header;
 }
 
 .separator {
@@ -206,11 +223,15 @@ main:not(#hero) {
 }
 
 .profile {
-  display: block;
-  height: 80px;
-  width: 80px;
-  border-radius: 100%;
-  background: $grey-300 no-repeat center center / cover;
+  display: none;
+
+  @include desktop {
+    display: block;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    background: $grey-300 no-repeat center center / cover;
+  }
 }
 
 .form-group {
@@ -275,23 +296,53 @@ input.form-control {
 
 .btn {
   display: inline-block;
-  padding: getSizedValue(3) getSizedValue(4);
+  padding: getSizedValue(3) getSizedValue(5);
   border-radius: $rounded-circle;
   appearance: none;
   -webkit-appearance: none;
-  border: 0;
+  border: 3px solid $primary-200;
   cursor: pointer;
-  transition: background-color .2s ease;
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+  text-decoration: none;
   color: $light;
-  background-color: $primary-500;
+  background-color: $primary-400;
   font-size: 1rem;
 
   &:hover,
   &:focus {
-    background-color: $primary-400;
+    border-color: $primary-300;
+  }
+
+  &:active {
+    border-color: $primary-500;
+    background-color: $primary-500;
+  }
+
+  &.btn-secondary {
+    color: $grey-800;
+    background-color: $primary-100;
+    border: 3px solid $primary-200;
+
+    &:hover,
+    &:focus {
+      color: $grey-900;
+      border-color: $primary-300;
+      background-color: $primary-200;
+    }
+
+    &:active {
+      color: $grey-100;
+      border-color: $primary-500;
+      background-color: $primary-500;
+    }
+  }
+
+  &.btn-sm {
+    padding: getSizedValue(1) getSizedValue(4);
+    font-size: getFontSize(2);
   }
 }
 
-.border-top-primary {
-  border-top: 12px solid $primary-500;
+.border-top-primary-300 {
+  border-top: 12px solid $primary-300;
 }

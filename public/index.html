@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Wdn</title>
 
@@ -13,8 +13,11 @@
 </head>
 <body class="size-3">
 
-<header class="bg-light text-dark shadow-lg">
-    <div class="content size-2">
+<header class="bg-light text-dark">
+    <div class="content">
+        <a class="logo-mobile" href="#hero">
+            P&amp;P
+        </a>
         <a class="logo font-handwriting" href="#hero">
             Pompodálé &amp; Pumukli
         </a>
@@ -39,7 +42,7 @@
         <div class="d-flex align-items-center justify-content-center size-4">
             <div class="text-right">2019.05.18</div>
             <div class="pl-5 pr-5 text-grey-500">
-                Csak <strong class="text-light">32</strong> nap!
+                Csak <strong class="text-light" id="days"></strong> nap!
             </div>
             <div class="">Csillagkert</div>
         </div>
@@ -51,7 +54,7 @@
     </div>
 </main>
 
-<main id="rolunk" class="border-top-primary">
+<main id="rolunk" class="border-top-primary-300">
     <div class="content">
         <div class="row">
             <div class="col-6 pr-6">
@@ -59,13 +62,13 @@
                     <div class="profile mr-5" style="background-image: url('/images/krisz.png')"></div>
                     <div class="text-left mb-3">
                         <div>
-                            <div class="size-5 text-grey-300">Vőlegény</div>
+                            <div class="size-5 text-grey-400">Vőlegény</div>
                             <h1 class="size-8 d-inline-block">Krisz</h1>
                         </div>
-                        <div class="mt-2 bg-grey-200 text-grey-800 rounded-circle p-2 pl-4 pr-4 size-2 d-inline-block">
+                        <a class="btn btn-sm btn-secondary mt-3" href="https://fb.com/skrisz" target="_blank">
                             <i class="fab fa-facebook-messenger mr-2"></i>
                             Facebook
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <p class="mt-5 text-justify text-grey-600">
@@ -76,56 +79,48 @@
                 <div class="d-flex justify-content-end">
                     <div class="text-right mb-3">
                         <div>
-                            <div class="size-5 text-grey-300">Menyasszony</div>
+                            <div class="size-5 text-grey-400">Menyasszony</div>
                             <h1 class="size-8 d-inline-block">Niki</h1>
                         </div>
-                        <div class="mt-2 bg-grey-200 text-grey-800 rounded-circle p-2 pl-4 pr-4 size-2 d-inline-block">
+                        <a class="btn btn-sm btn-secondary mt-3" href="https://fb.com/92nikolett" target="_blank">
                             <i class="fab fa-facebook-messenger mr-2"></i>
                             Facebook
-                        </div>
+                        </a>
                     </div>
                     <div class="profile ml-5" style="background-image: url('/images/baba.jpg')"></div>
                 </div>
                 <p class="mt-5 text-justify text-grey-600">
-                    Sed nisl massa, pellentesque at mauris molestie, posuere pellentesque sem. Nam non ex condimentum, lacinia turpis sed, ullamcorper orci. Pellentesque vel diam eget erat faucibus iaculis. Proin rutrum bibendum libero, eget hendrerit dolor blandit sit amet. Nullam vulputate ante sit amet lacinia cursus. Mauris vel nunc imperdiet, molestie ex ac, eleifend lacus. Nullam condimentum neque nec magna pellentesque, et consequat quam malesuada. Vivamus convallis turpis eget ultricies porta. Vestibulum accumsan fermentum malesuada. Sed urna velit, scelerisque vel ex vel, rhoncus aliquam odio. Curabitur egestas mattis fringilla. Ut mattis urna et magna pharetra semper.
+                    Sed nisl massa, pellentesque at mauris molestie, posuere pellentesque sem. Nam non ex condimentum, lacinia turpis sed, ullamcorper orci. Pellentesque vel diam eget erat faucibus iaculis. Proin rutrum bibendum libero, eget hendrerit dolor blandit sit amet. Nullam vulputate ante sit amet lacinia cursus. Mauris vel nunc imperdiet, molestie ex ac, eleifend lacus. Nullam condimentum neque nec magna pellentesque, et consequat quam malesuada. Vivamus convallis turpis eget ultricies porta. Vestibulum accumsan fermentum malesuada. Sed urna velit, scelerisque vel ex vel, rhoncus aliquam odio.
                 </p>
             </div>
         </div>
     </div>
 </main>
 
-<div class="separator">
-    <div class="text">Akiket még kereshettek</div>
-</div>
-
-<main id="elerhetosegek">
-    <div class="content pb-5 pt-5">
+<main id="elerhetosegek" class="pb-8 pt-8">
+    <div class="content">
         <div class="row">
             <div class="col-6 pr-6 d-flex">
                 <div class="profile mr-5" style="background-image: url('images/jekkel-daniel.jpg')"></div>
                 <div class="text-left">
-                    <div class="size-5 text-grey-500">Ceremóniamester</div>
-                    <h1 class="size-7 d-inline-block">Jekkel Dániel</h1>
+                    <div class="size-4 text-grey-400">Ceremóniamester</div>
+                    <h1 class="size-6 d-inline-block">Jekkel Dániel</h1>
 
-                    <div>
-                        <div class="mt-2 bg-grey-200 text-grey-800 rounded-circle p-2 pl-4 pr-4 size-2 d-inline-block">
-                            <i class="fab fa-facebook-messenger mr-2"></i>
-                            Facebook
-                        </div>
-                    </div>
+                    <a class="btn btn-sm btn-secondary mt-3" href="https://fb.com/danieljekkel" target="_blank">
+                        <i class="fab fa-facebook-messenger mr-2"></i>
+                        Facebook
+                    </a>
                 </div>
             </div>
             <div class="col-6 pl-6 d-flex justify-content-end">
                 <div class="text-right">
-                    <div class="size-5 text-grey-400">Esküvőszervező</div>
-                    <h1 class="size-7 d-inline-block">Mátyus Enikő</h1>
+                    <div class="size-4 text-grey-400">Esküvőszervező</div>
+                    <h1 class="size-6 d-inline-block">Mátyus Enikő</h1>
 
-                    <div>
-                        <div class="mt-2 bg-grey-200 text-grey-800 rounded-circle p-2 pl-4 pr-4 size-2 d-inline-block">
-                            <i class="fab fa-facebook-messenger mr-2"></i>
-                            Facebook
-                        </div>
-                    </div>
+                    <a class="btn btn-sm btn-secondary mt-3" href="https://fb.com/eniko.matyus.4" target="_blank">
+                        <i class="fab fa-facebook-messenger mr-2"></i>
+                        Facebook
+                    </a>
                 </div>
                 <div class="profile ml-5" style="background-image: url('images/matyus-eniko.jpg')"></div>
             </div>
@@ -133,48 +128,48 @@
     </div>
 </main>
 
-<div class="separator">
-    <div class="text">Meghívó válasz</div>
-</div>
-
 <main id="rsvp" class="stage-0">
-    <div class="letter l-1">
-        <div class="letter-content d-flex justify-content-center align-items-center">
-            <div>
-                <div class="m-0 text-grey-800 font-handwriting size-8">Meghívó</div>
-                <div class="pb-9 text-primary-500 font-handwriting size-4">(kattints ide)</div>
+    <div id="letter" class="">
+        <div class="d-flex justify-content-center align-items-center letter-intro">
+            <div class="m-0 text-grey-800 font-handwriting size-9">Meghívó</div>
+        </div>
+        <div class="d-flex flex-column justify-content-between text-grey-700 text-center">
+            <p class="text-dark size-7 font-handwriting mb-5">2019. május 18.</p>
+
+            <p class="mb-5">
+                Szeretettel várunk a polgári szertartásra majd az azt követő ünnepi vacsorára, és a hajnalig tartó felejthetetlen bulira.
+            </p>
+
+            <p class="text-dark size-7 font-handwriting">Csillagkert</p>
+            <p class="">1029 Budapest Feketefej u. 2.</p>
+
+            <hr class="mt-7 mb-7">
+
+            <p class="">
+                Örömmel tudatjuk, hogy az előzetes várakozásoknak eleget téve
+                szerelmünket a törvény előtt is megerősítjük! Ez a nap nélkületek nem lenne teljes, ezért szeretnénk ha mellettünk lennétek amikor hivatalosan is kimondjuk a boldogító igent.
+            </p>
+
+            <div class="quote mt-6">
+                Azt kérded, mit vegyél? Minek örülnénk?<br>
+                Megsúgjuk az álmunk egy meghitt hajlék.<br>
+                Borítékba tedd hát, mit ajándékra szántál,<br>
+                Hogy rajta álljon neved, egy-egy sor téglán!<br>
+                S ha miénk lett már az a meghitt otthon,<br>
+                Szíves vendég leszel, ha arra visz a sorsod.
+            </div>
+    
+            <p class="mt-6">
+                A menyecsketáncra kérünk csak <strong>kaparós sorsjegyet</strong> hozz, hogy hozzásegíts a szerencséhez - ha már tányért nem törünk. :)
+            </p>
+
+            <div class="text-center mt-8">
+                <a class="btn" href="#">
+                    Kitöltöm a válaszlevelet
+                </a>
             </div>
         </div>
-    </div>
-
-    <div class="letter l-2 d-flex flex-column justify-content-end">
-        <div class="letter-content d-flex flex-column justify-content-between" id="">
-            <div>
-                <p class="text-left mb-6 strong">
-                    Kedves vendégünk!
-                </p>
-
-                <p class="text-left mb-6 size-2">
-                    Szeretettel meghívunk az esküvőnkre, melyet <strong>2019. május 18</strong>-án tartunk a <strong>Csillagkertben</strong>.
-                    <br><br>
-                    Nagyon szeretnénk, ha jelenléteddel emelnéd az est fényét, így megkérünk hogy jelezz vissza, számíthatunk-e Rád. :)
-                </p>
-            </div>
-
-            <div>
-                <div class="form-group">
-                    <label for="nev" class="form-label">Nevem:</label>
-                    <input type="text" id="nev" class="form-control" placeholder="Kovács János">
-                </div>
-                <div class="mt-7 d-flex justify-content-end align-items-center">
-                    <button class="link mr-5 size-3" id="submit-no">Nem leszek ott</button>
-                    <button class="btn" id="submit-yes">
-                        <i class="fa fa-check mr-1"></i>
-                        Ott leszek
-                    </button>
-                </div>
-            </div>
-        </div>
+        <div class="letter-footer"></div>
     </div>
 </main>
 

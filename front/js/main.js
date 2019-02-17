@@ -1,8 +1,8 @@
 // SCSS
 require('../styles/styles.scss');
 
-// JS
-require('./inv');
+var days = Math.floor((new Date('2019-05-18') - new Date()) / 1000 / 60 / 60 / 24);
+$('#days').text(days);
 
 var $window = $(window);
 var $header = $('header').eq(0);

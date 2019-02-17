@@ -43,100 +43,118 @@
   }
 }
 
-@keyframes letter-content {
-  from {
-    opacity: 0;
-  }
+#rsvp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 10px !important;
+  text-align: center;
+  background: $primary-200;
 
-  to {
-    opacity: 1;
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: center center / cover;
+    opacity: .2;
   }
 }
 
-#rsvp {
-  $rsvp-padding: 200px;
-  $rsvp-background: $primary-100;
-  $letter-height: 500px;
-  $letter-width: 360px;
-
+#letter {
+  display: block;
   position: relative;
-  height: #{$letter-height + ($rsvp-padding * 2)};
-  padding: $rsvp-padding 0;
-  text-align: center;
-  background: $rsvp-background repeat center center / 24px;
+  z-index: 2;
+  width: 100%;
+  max-width: 460px;
+  border-radius: 5px;
+  padding: getSizedValue(4) getSizedValue(8);
+  transition: transform .3s ease;
+  transform: none;
+  background: $light;
+  box-shadow: $shadow-lg;
+  overflow: hidden;
 
-  .letter {
+  &::before {
     display: block;
+    content: '';
     position: absolute;
-    top: $rsvp-padding;
-    left: calc(50% - #{$letter-width / 2});
-    margin: 0 auto;
-    height: $letter-height;
-    width: $letter-width;
-    border-radius: 5px;
-    transition: transform .3s ease;
-    transform: none;
-    background: $light;
-    background-size: 500px 593px;
-    box-shadow: $shadow;
-    overflow: hidden;
-
-    &::before {
-      display: block;
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      height: 100%;
-      width: 100%;
-      background: white repeat top left url(/images/paper.jpg) / 260px;
-      opacity: .1;
-    }
-
-    .letter-content {
-      position: relative;
-      z-index: 3;
-      height: 100%;
-      width: 100%;
-      padding: getSizedValue(7);
-      overflow: auto;
-      opacity: 0;
-    }
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    background: white repeat top left url(/images/paper.jpg) / 260px;
+    opacity: .4;
   }
 
-  .l-1 {
-    z-index: 2;
-    transform: none;
-
-    .letter-content {
-      opacity: 1;
-
-      background-image: url(/images/flower-circle.png),
-      url(/images/flower-bottom.png);
-      background-position: center top 60px, center bottom 60px;
-      background-repeat: no-repeat, no-repeat;
-      background-size: auto 300px, auto 140px;
-    }
+  hr {
+    display: block;
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: $grey-200;
   }
 
-  .l-2 {
+  > * {
+    position: relative;
     z-index: 1;
-    transform: translateY(3px) translateX(10px) rotateZ(2deg);
   }
 
-  &.stage-1 {
-    .l-1 {
-      animation: previous-letter 1s ease-in-out forwards;
-    }
+  .letter-intro {
+    height: 260px;
+    background-image: url(/images/flower-circle.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: auto 260px;
 
-    .l-2 {
-      animation: next-letter 1s ease-in-out .1s forwards;
-
-      .letter-content {
-        display: none;
-        animation: letter-content 1s ease-in-out forwards;
-      }
+    @include desktop {
+      height: 400px;
+      background-size: auto 400px;
     }
+  }
+
+  .letter-footer {
+    height: 200px;
+    background-image: url(/images/flower-bottom.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto 200px;
+  }
+}
+
+.quote {
+  display: block;
+  position: relative;
+  padding: getSizedValue(4);
+  color: $grey-600;
+  font-size: getFontSize(1);
+
+  &::before,
+  &::after {
+    display: block;
+    content: '“';
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    line-height: 5rem;
+    color: $grey-200;
+    font-family: 'Rochester', cursive;
+    font-size: 10rem;
+  }
+
+  &::after {
+    content: '”';
+    top: auto;
+    left: auto;
+    bottom: 0px;
+    right: -10px;
+    line-height: 0;
   }
 }
