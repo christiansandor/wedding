@@ -1,0 +1,24 @@
+$grey-base: 0;
+
+$grey-100: hsl($grey-base, 0, 99%);
+$grey-200: hsl($grey-base, 0, 92%);
+$grey-300: hsl($grey-base, 0, 85%);
+$grey-400: hsl($grey-base, 0, 72%);
+$grey-500: hsl($grey-base, 0, 60%);
+$grey-600: hsl($grey-base, 0, 48%);
+$grey-700: hsl($grey-base, 0, 35%);
+$grey-800: hsl($grey-base, 0, 24%);
+$grey-900: hsl($grey-base, 0, 12%);
+
+$light: $grey-100;
+$dark: $grey-900;
+
+$primary-100: hsl(290, 40, 98%);
+$primary-300: hsl(285, 70, 78%);
+$primary-400: hsl(283, 90, 64%);
+$primary-500: hsl(280, 100, 50%);
+$primary-700: hsl(275, 100, 35%);
+$primary-900: hsl(270, 100, 15%);
+
+$red: hsl(10, 90%, 40%);
+$red-background: hsl(10, 90%, 95%);
