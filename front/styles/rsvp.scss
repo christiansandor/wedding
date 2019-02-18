@@ -49,20 +49,20 @@
   justify-content: center;
   position: relative;
   min-height: 100vh;
-  padding: 50px 10px !important;
+  padding: 80px 10px !important;
   text-align: center;
-  background: $primary-200;
+  overflow: hidden;
+  background: $grey-900;
 
-  &::before {
+  .background {
     display: block;
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
     height: 100%;
     width: 100%;
-    background: center center / cover;
+    background: url('/images/mink_2.jpg') center center / cover;
     opacity: .2;
   }
 }

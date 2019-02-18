@@ -71,7 +71,7 @@ header {
   .logo-mobile {
     @extend .font-handwriting;
     
-    color: $primary-500;
+    color: $grey-900;
     text-decoration: none;
     font-size: getFontSize(4);
   }
@@ -84,13 +84,12 @@ header {
 
   .logo {
     display: none;
+    border-radius: $rounded-circle;
+    text-decoration: none;
+    font-size: getFontSize(6);
 
     @include desktop {
       display: block;
-      border-radius: $rounded-circle;
-      color: $primary-500;
-      text-decoration: none;
-      font-size: getFontSize(6);
     }
   }
 
@@ -184,10 +183,7 @@ main:not(#hero) {
 }
 
 #elerhetosegek {
-  position: relative;
-  z-index: 2;
   background: $primary-100;
-  box-shadow: $shadow-header;
 }
 
 .separator {
@@ -229,6 +225,7 @@ main:not(#hero) {
 
   @include desktop {
     display: block;
+    flex: 0 0 80px;
     height: 80px;
     width: 80px;
     border-radius: 100%;

@@ -7,6 +7,8 @@ $('#days').text(days);
 var $window = $(window);
 var $header = $('header').eq(0);
 var $heroBackground = $('#hero .background');
+var $rsvp = $('#rsvp');
+var $rsvpBackground = $('#rsvp .background');
 
 var activeClassName = 'active';
 var area = 100;
@@ -26,4 +28,6 @@ $window.scroll(_ => {
     }
 
     $heroBackground.attr('style', 'top:' + Math.floor(top / 2) + 'px');
+
+    $rsvpBackground.attr('style', 'top:' + Math.floor((top - $rsvp.offset().top) / 2) + 'px');
 });

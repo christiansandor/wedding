@@ -41,6 +41,10 @@ $colors: (
   }
 }
 
+.text-border {
+  border-bottom: 3px solid $grey-400;
+}
+
 /* Margins, paddings */
 
 @for $i from 0 to length($sizing-map) {
