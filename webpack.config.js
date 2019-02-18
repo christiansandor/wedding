@@ -15,7 +15,7 @@ module.exports = {
         ignored: ['public/**/*', 'node_modules'],
     },
     devServer: {
-        contentBase: resolve('./public/'),
+        contentBase: resolve('./'),
         watchContentBase: true,
         port: 9000,
         hot: true,
@@ -34,7 +34,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: resolve('public/index.html'),
+            template: resolve('index.html'),
         }),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),

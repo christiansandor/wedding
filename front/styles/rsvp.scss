@@ -62,7 +62,7 @@
     z-index: 1;
     height: 100%;
     width: 100%;
-    background: url('/images/mink_2.jpg') center center / cover;
+    background: url('/public/images/mink_2.jpg') center center / cover;
     opacity: .2;
   }
 }
@@ -90,7 +90,7 @@
     z-index: 0;
     height: 100%;
     width: 100%;
-    background: white repeat top left url(/images/paper.jpg) / 260px;
+    background: white repeat top left url('/public/images/paper.jpg') / 260px;
     opacity: .4;
   }
 
@@ -109,7 +109,7 @@
 
   .letter-intro {
     height: 260px;
-    background-image: url(/images/flower-circle.png);
+    background-image: url('/public/images/flower-circle.png');
     background-position: center top;
     background-repeat: no-repeat;
     background-size: auto 260px;
@@ -122,7 +122,7 @@
 
   .letter-footer {
     height: 200px;
-    background-image: url(/images/flower-bottom.png);
+    background-image: url('/public/images/flower-bottom.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto 200px;
