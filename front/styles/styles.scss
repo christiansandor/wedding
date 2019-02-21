@@ -113,6 +113,14 @@ header {
   }
 }
 
+.wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+  transform-style: preserve-3d;
+}
+
 main:not(#hero) {
   position: relative;
   padding: 40px 10px;
@@ -133,19 +141,50 @@ main:not(#hero) {
   overflow: hidden;
   background: $grey-900;
 
+  .background,
+  .background-1,
+  .background-2 {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    transform: translateZ(-1px) scale(2);
+    opacity: 1;
+    background: no-repeat center center / cover;
+  }
+
   .background {
+    z-index: 3;
+    background-image: url("/public/images/mink.png");
+  }
+
+  .background-1 {
+    z-index: 2;
+    transform: translateZ(-1.7px) scale(2.7);
+    background-image: url("/public/images/mink_hatter_1.png");
+  }
+
+  .background-2 {
+    z-index: 1;
+    transform: translateZ(-2px) scale(3);
+    background-image: url("/public/images/mink_hatter_2.png");
+  }
+
+  &::before {
     display: block;
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: 5;
     height: 100%;
     width: 100%;
-    transition: top ease;
-    opacity: .4;
-    background: no-repeat center center / cover;
-    background-image: url("/public/images/mink.jpg");
+    background: rgba(black, .4);
   }
 
   &::after {
@@ -154,16 +193,16 @@ main:not(#hero) {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: 6;
     height: 40%;
     width: 100%;
     background: none;
-    background: linear-gradient(rgba(black, .7), rgba(black, 0));
+    background: linear-gradient(rgba(black, .4), rgba(black, 0));
   }
 
   > * {
     position: relative;
-    z-index: 1;
+    z-index: 10;
     width: 100%;
   }
 

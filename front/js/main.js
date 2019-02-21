@@ -4,11 +4,8 @@ require('../styles/styles.scss');
 var days = Math.floor((new Date('2019-05-18') - new Date()) / 1000 / 60 / 60 / 24);
 $('#days').text(days);
 
-var $window = $(window);
+var $window = $('.wrapper').first();
 var $header = $('header').eq(0);
-var $heroBackground = $('#hero .background');
-var $rsvp = $('#rsvp');
-var $rsvpBackground = $('#rsvp .background');
 
 var activeClassName = 'active';
 var area = 100;
@@ -26,8 +23,4 @@ $window.scroll(_ => {
         $header.removeClass(activeClassName);
         isActive = false;
     }
-
-    $heroBackground.attr('style', 'top:' + Math.floor(top / 2) + 'px');
-
-    $rsvpBackground.attr('style', 'top:' + Math.floor((top - $rsvp.offset().top) / 2) + 'px');
 });
