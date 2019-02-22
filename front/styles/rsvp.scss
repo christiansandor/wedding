@@ -53,17 +53,20 @@
   text-align: center;
   overflow: hidden;
   background: $grey-900;
-
+  
   .background {
     display: block;
     position: absolute;
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
     z-index: 1;
     height: 100%;
     width: 100%;
-    background: url('/public/images/mink_2.jpg') center center / cover;
+    transform: translateZ(-1px) scale(2);
     opacity: .2;
+    background: url('/public/images/mink_2.jpg') no-repeat center center / cover;
   }
 }
 
