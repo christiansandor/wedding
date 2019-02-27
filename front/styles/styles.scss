@@ -384,3 +384,93 @@ input.form-control {
 .border-top-primary-300 {
   border-top: 12px solid $primary-300;
 }
+
+$program-bullet-size: 12px;
+$program-bullet-border-size: 4px;
+$program-bullet-top: 17.5px - ($program-bullet-size - $program-bullet-border-size);
+$program-title-padding: getSizedValue(6) + getSizedValue(5);
+
+.program-left,
+.program-right {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    background: lighten($primary-200, 5%);
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: $program-bullet-top;
+    z-index: 10;
+    height: $program-bullet-size;
+    width: $program-bullet-size;
+    border: $program-bullet-border-size solid $grey-100;
+    border-radius: 50%;
+    background: $primary-200;
+  }
+
+  h1 {
+    font-weight: normal;
+
+    .strong,
+    &.strong {
+      display: inline-block;
+      position: relative;
+      z-index: 9;
+      padding: .1rem 1rem;
+      border-radius: 999999px;
+      background: lighten($primary-200, 5%);
+      font-weight: bold;
+    }
+  }
+}
+
+.program-left {
+  &::before {
+    right: -3px;
+  }
+
+  &::after {
+    right: -#{($program-bullet-size / 2) + $program-bullet-border-size};
+  }
+
+  h1 {
+    .strong,
+    &.strong {
+      margin-right: -$program-title-padding;
+      padding-right: $program-title-padding;
+    }
+  }
+}
+
+.program-right {
+  &::before {
+    left: -3px;
+  }
+
+  &::after {
+    left: -#{($program-bullet-size / 2) + $program-bullet-border-size};
+  }
+
+  h1 {
+    .strong,
+    &.strong {
+      margin-left: -$program-title-padding;
+      padding-left: $program-title-padding;
+    }
+  }
+}
+
+.program-padded {
+  &::after {
+    top: 79px + $program-bullet-top;
+  }
+}
