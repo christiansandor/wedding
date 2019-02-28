@@ -5,16 +5,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: {
-        main: resolve('./front/js/main.js'),
-    },
+    entry: resolve(__dirname, 'front', 'styles.scss'),
     output: {
-        filename: 'main.js',
         path: resolve('./public/dist'),
         publicPath: '/public/dist/',
     },
     watchOptions: {
-        ignored: ['public/**/*', 'node_modules'],
+        ignored: ['public/dist/**/*', 'node_modules'],
     },
     devServer: {
         contentBase: resolve('./'),
@@ -28,9 +25,8 @@ module.exports = {
             test: /\.scss$/,
             use: [
                 MiniCssExtractPlugin.loader,
-                // 'style-loader', // creates style nodes from JS strings
-                'css-loader', // translates CSS into CommonJS
-                'sass-loader', // compiles Sass to CSS, using Node Sass by default
+                'css-loader',
+                'sass-loader',
             ],
         }],
     },
