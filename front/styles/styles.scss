@@ -167,24 +167,32 @@ main:not(#hero) {
 
   .background {
     z-index: 3;
-    background-image: url("/public/images/mink.png");
+    background-image: url("/public/images/mink.jpg");
+
+    @include desktop {
+      background-image: url("/public/images/mink.png");
+    }
   }
 
   .background-1 {
-    z-index: 2;
-    background-image: url("/public/images/mink_hatter_1.png");
+    display: none;
 
     @include desktop {
+      display: block;
+      z-index: 2;
       transform: translateZ(-1.7px) scale(2.7);
+      background-image: url("/public/images/mink_hatter_1.png");
     }
   }
 
   .background-2 {
-    z-index: 1;
-    background-image: url("/public/images/mink_hatter_2.png");
+    display: none;
 
     @include desktop {
+      display: block;
+      z-index: 1;
       transform: translateZ(-2px) scale(3);
+      background-image: url("/public/images/mink_hatter_2.png");
     }
   }
 
