@@ -11,7 +11,7 @@ module.exports = {
     output: {
         filename: 'main.js',
         path: resolve('./public/dist'),
-        publicPath: '/public/',
+        publicPath: '/public/dist/',
     },
     watchOptions: {
         ignored: ['public/**/*', 'node_modules'],
