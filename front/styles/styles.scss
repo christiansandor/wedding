@@ -385,9 +385,9 @@ input.form-control {
   border-top: 12px solid $primary-300;
 }
 
-$program-bullet-size: 12px;
-$program-bullet-border-size: 4px;
-$program-bullet-top: 17.5px - ($program-bullet-size - $program-bullet-border-size);
+$program-border-width: .25rem;
+$program-bullet-size: 1rem;
+$program-bullet-top: 1.8rem - $program-bullet-size;
 $program-title-padding: getSizedValue(6) + getSizedValue(5);
 
 .program-left,
@@ -400,8 +400,8 @@ $program-title-padding: getSizedValue(6) + getSizedValue(5);
     position: absolute;
     top: 0;
     height: 100%;
-    width: 6px;
-    background: lighten($primary-200, 5%);
+    width: $program-border-width;
+    background: $grey-200;
   }
 
   &::after {
@@ -412,7 +412,6 @@ $program-title-padding: getSizedValue(6) + getSizedValue(5);
     z-index: 10;
     height: $program-bullet-size;
     width: $program-bullet-size;
-    border: $program-bullet-border-size solid $grey-100;
     border-radius: 50%;
     background: $primary-200;
   }
@@ -425,9 +424,10 @@ $program-title-padding: getSizedValue(6) + getSizedValue(5);
       display: inline-block;
       position: relative;
       z-index: 9;
-      padding: .1rem 1rem;
+      padding: .2rem 1.2rem;
       border-radius: 999999px;
-      background: lighten($primary-200, 5%);
+      background: $grey-100;
+      box-shadow: $shadow-header;
       font-weight: bold;
     }
   }
@@ -435,11 +435,11 @@ $program-title-padding: getSizedValue(6) + getSizedValue(5);
 
 .program-left {
   &::before {
-    right: -3px;
+    right: -$program-border-width / 2;
   }
 
   &::after {
-    right: -#{($program-bullet-size / 2) + $program-bullet-border-size};
+    right: -#{$program-bullet-size / 2};
   }
 
   h1 {
@@ -453,11 +453,11 @@ $program-title-padding: getSizedValue(6) + getSizedValue(5);
 
 .program-right {
   &::before {
-    left: -3px;
+    left: -$program-border-width / 2;
   }
 
   &::after {
-    left: -#{($program-bullet-size / 2) + $program-bullet-border-size};
+    left: -#{$program-bullet-size / 2};
   }
 
   h1 {
@@ -471,6 +471,24 @@ $program-title-padding: getSizedValue(6) + getSizedValue(5);
 
 .program-padded {
   &::after {
-    top: 79px + $program-bullet-top;
+    top: getSizedValue(9) + $program-bullet-top;
+  }
+}
+
+$program-last-bullet-border-width: .25rem;
+.program-end {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - #{$program-bullet-size / 2 + $program-last-bullet-border-width});
+    height: $program-bullet-size;
+    width: $program-bullet-size;
+    border: $program-last-bullet-border-width solid $primary-200;
+    border-radius: 50%;
+    background: $grey-100;
   }
 }
