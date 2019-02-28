@@ -2,6 +2,7 @@
 @import "sizes";
 @import "modifiers";
 @import "grid";
+@import "responsive";
 
 @import "helper-classes";
 @import "rsvp";
@@ -23,7 +24,7 @@ html {
   font-family: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
   font-size: 12px;
 
-  @media only screen and (min-width: 768px) {
+  @include desktop {
     font-size: 16px;
   }
 }
@@ -117,8 +118,11 @@ header {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  perspective: 1px;
-  transform-style: preserve-3d;
+
+  @include desktop {
+    perspective: 1px;
+    transform-style: preserve-3d;
+  }
 }
 
 main:not(#hero) {
@@ -153,9 +157,12 @@ main:not(#hero) {
     z-index: 1;
     height: 100%;
     width: 100%;
-    transform: translateZ(-1px) scale(2);
     opacity: 1;
     background: no-repeat center center / cover;
+
+    @include desktop {
+      transform: translateZ(-1px) scale(2);
+    }
   }
 
   .background {
@@ -165,14 +172,20 @@ main:not(#hero) {
 
   .background-1 {
     z-index: 2;
-    transform: translateZ(-1.7px) scale(2.7);
     background-image: url("/public/images/mink_hatter_1.png");
+
+    @include desktop {
+      transform: translateZ(-1.7px) scale(2.7);
+    }
   }
 
   .background-2 {
     z-index: 1;
-    transform: translateZ(-2px) scale(3);
     background-image: url("/public/images/mink_hatter_2.png");
+
+    @include desktop {
+      transform: translateZ(-2px) scale(3);
+    }
   }
 
   &::before {
@@ -260,16 +273,12 @@ main:not(#hero) {
 }
 
 .profile {
-  display: none;
-
-  @include desktop {
-    display: block;
-    flex: 0 0 80px;
-    height: 80px;
-    width: 80px;
-    border-radius: 100%;
-    background: $grey-300 no-repeat center center / cover;
-  }
+  display: block;
+  flex: 0 0 80px;
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  background: $grey-300 no-repeat center center / cover;
 }
 
 .form-group {
@@ -388,7 +397,7 @@ input.form-control {
 $program-border-width: .25rem;
 $program-bullet-size: 1rem;
 $program-bullet-top: 1.8rem - $program-bullet-size;
-$program-title-padding: getSizedValue(6) + getSizedValue(5);
+$program-title-padding: getSizedValue(7) + getSizedValue(5);
 
 .program-left,
 .program-right {
@@ -424,11 +433,11 @@ $program-title-padding: getSizedValue(6) + getSizedValue(5);
       display: inline-block;
       position: relative;
       z-index: 9;
-      padding: .2rem 1.2rem;
-      border-radius: 999999px;
+      padding: .05rem 0;
+      border-bottom: .15rem solid $primary-200;
+      // border-radius: 999999px;
       background: $grey-100;
-      box-shadow: $shadow-header;
-      font-weight: bold;
+      // box-shadow: $shadow-header;
     }
   }
 }
@@ -447,6 +456,8 @@ $program-title-padding: getSizedValue(6) + getSizedValue(5);
     &.strong {
       margin-right: -$program-title-padding;
       padding-right: $program-title-padding;
+      border-top-right-radius: 99999px;
+      border-bottom-right-radius: 99999px;
     }
   }
 }
@@ -465,13 +476,15 @@ $program-title-padding: getSizedValue(6) + getSizedValue(5);
     &.strong {
       margin-left: -$program-title-padding;
       padding-left: $program-title-padding;
+      border-top-left-radius: 99999px;
+      border-bottom-left-radius: 99999px;
     }
   }
 }
 
 .program-padded {
   &::after {
-    top: getSizedValue(9) + $program-bullet-top;
+    top: getSizedValue(10) + $program-bullet-top;
   }
 }
 

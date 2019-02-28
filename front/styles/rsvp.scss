@@ -64,9 +64,12 @@
     z-index: 1;
     height: 100%;
     width: 100%;
-    transform: translateZ(-1px) scale(2);
     opacity: .2;
     background: url('/public/images/mink_2.jpg') no-repeat center center / cover;
+
+    @include desktop {
+      transform: translateZ(-1px) scale(2);
+    }
   }
 }
 

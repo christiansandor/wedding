@@ -18,6 +18,7 @@ $colors: (
         light: $light,
         dark: $dark,
         primary-100: $primary-100,
+        primary-200: $primary-200,
         primary-300: $primary-300,
         primary-500: $primary-500,
         primary-700: $primary-700,
@@ -116,6 +117,10 @@ $colors: (
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .justify-content-center {
   justify-content: center;
 }
@@ -138,6 +143,20 @@ $colors: (
 
 .flex-fill {
   flex: 1;
+}
+
+@for $i from 1 to 5 {
+  .order-#{$i} {
+    order: $i;
+  }
+}
+
+@include desktop {
+  @for $i from 1 to 5 {
+    .order-md-#{$i} {
+      order: $i;
+    }
+  }
 }
 
 /* Font sizes */
