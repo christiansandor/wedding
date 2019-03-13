@@ -1,10 +1,6 @@
 @import "colors";
-@import "sizes";
-@import "modifiers";
-@import "grid";
 @import "responsive";
 
-@import "helper-classes";
 @import "rsvp";
 
 * {
@@ -21,7 +17,7 @@ html {
   width: 100%;
   color: $grey-900;
   background-color: $grey-100;
-  font-family: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
+  font-family: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue !important;
   font-size: 12px;
 
   @include desktop {
@@ -29,15 +25,48 @@ html {
   }
 }
 
-.font-handwriting {
-  font-family: 'Rochester', cursive;
+h1,
+h2,
+h3 {
+  font-weight: bold;
 }
 
-.content {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 20px;
+.font-handwriting {
+  font-family: 'Rochester', cursive;
+  font-weight: normal;
+}
+
+.container {
+  max-width: 820px;
+}
+
+.text-primary {
+  color: $primary-300 !important;
+}
+
+.btn-primary {
+  border-radius: 5px;
+  border: 3px solid $primary-300;
+  background-color: $primary-400;
+
+  &:hover {
+    border-color: $primary-400;
+    background-color: $primary-500;
+  }
+}
+
+.btn-secondary {
+  border-radius: 3px;
+  border: 1px solid $grey-200;
+  color: $grey-700;
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(black, .03), 0 4px 8px rgba(black, .02);
+
+  &:hover {
+    border-color: $primary-400;
+    color: white;
+    background-color: $primary-500;
+  }
 }
 
 header {
@@ -49,23 +78,14 @@ header {
   width: 100%;
   transition: transform .2s ease;
   transform: translateY(-100%);
-  font-size: getFontSize(2);
-  box-shadow: $shadow-header;
+  font-size: .8rem;
 
   @include desktop {
-    font-size: getFontSize(3);
+    font-size: .9rem;
   }
 
   &.active {
     transform: none;
-  }
-
-  .content {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    height: 100%;
-    padding: 24px 20px;
   }
 
   .logo,
@@ -74,7 +94,7 @@ header {
     
     color: $grey-900;
     text-decoration: none;
-    font-size: getFontSize(4);
+    font-size: 1rem;
   }
 
   .logo-mobile {
@@ -85,9 +105,9 @@ header {
 
   .logo {
     display: none;
-    border-radius: $rounded-circle;
+    border-radius: 999999px;
     text-decoration: none;
-    font-size: getFontSize(6);
+    font-size: 1.4rem;
 
     @include desktop {
       display: block;
@@ -95,17 +115,13 @@ header {
   }
 
   a:not(.logo):not(.logo-mobile) {
-    margin-left: getSizedValue(6);
+    margin-left: 20px;
     text-decoration: none;
     transition: color .2s ease;
     cursor: pointer;
     color: $grey-400;
     text-transform: uppercase;
     font-weight: normal;
-    
-    @include desktop {
-      font-size: getFontSize(2);
-    }
 
     &:hover,
     &.active {
@@ -227,7 +243,16 @@ main:not(#hero) {
     width: 100%;
   }
 
+  .hero-text {
+    font-size: 3rem;
+
+    .middle-text {
+      font-size: 5rem;
+    }
+  }
+
   a {
+    display: inline-block;
     color: $grey-500;
     transition: color .2s ease;
     text-decoration: none;
@@ -246,40 +271,6 @@ main:not(#hero) {
   background: $primary-100;
 }
 
-.separator {
-  display: block;
-  position: relative;
-  height: 20px;
-  width: calc(100% - 40px);
-  margin: 0 20px;
-  text-align: center;
-
-  &::before {
-    display: block;
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: 0;
-    height: 1px;
-    width: 100%;
-    background-color: $grey-200;
-  }
-
-  .text {
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    height: 100%;
-    margin: -30px 0 0;
-    padding: 0 getSizedValue(6);
-    color: $grey-500;
-    background-color: $light;
-    font-size: getFontSize(3);
-    font-weight: 400;
-  }
-}
-
 .profile {
   display: block;
   flex: 0 0 80px;
@@ -289,124 +280,10 @@ main:not(#hero) {
   background: $grey-300 no-repeat center center / cover;
 }
 
-.form-group {
-  display: block;
-  text-align: left;
-}
-
-.form-label {
-  @extend .size-3;
-
-  display: block;
-  margin-bottom: getSizedValue(1);
-  color: $grey-700;
-  font-weight: 400;
-}
-
-input.form-control {
-  display: block;
-  width: 100%;
-  padding: getSizedValue(3) 0;
-  border: 0;
-  border-bottom: 2px solid $grey-200;
-  -webkit-appearance: none;
-  outline: 0;
-  transition: border .2s ease;
-  background-color: transparent;
-  font-size: getFontSize(6);
-  font-family: inherit;
-  font-weight: 400;
-
-  &::-webkit-input-placeholder,
-  &::placeholder {
-    color: $grey-200;
-  }
-
-  &:hover {
-    border-bottom-color: $grey-400;
-  }
-
-  &:active,
-  &:focus {
-    border-bottom-color: $primary-500;
-  }
-}
-
-.link {
-  display: inline-block;
-  padding: getSizedValue(1);
-  cursor: pointer;
-  text-decoration: none;
-  appearance: none;
-  -webkit-appearance: none;
-  border: 0;
-  color: $primary-500;
-  font-size: 1rem;
-
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  padding: getSizedValue(3) getSizedValue(5);
-  border-radius: $rounded-circle;
-  appearance: none;
-  -webkit-appearance: none;
-  border: 3px solid $primary-200;
-  cursor: pointer;
-  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
-  text-decoration: none;
-  color: $light;
-  background-color: $primary-400;
-  font-size: 1rem;
-
-  &:hover,
-  &:focus {
-    border-color: $primary-300;
-  }
-
-  &:active {
-    border-color: $primary-500;
-    background-color: $primary-500;
-  }
-
-  &.btn-secondary {
-    color: $grey-800;
-    background-color: $primary-100;
-    border: 3px solid $primary-200;
-
-    &:hover,
-    &:focus {
-      color: $grey-900;
-      border-color: $primary-300;
-      background-color: $primary-200;
-    }
-
-    &:active {
-      color: $grey-100;
-      border-color: $primary-500;
-      background-color: $primary-500;
-    }
-  }
-
-  &.btn-sm {
-    padding: getSizedValue(1) getSizedValue(4);
-    font-size: getFontSize(2);
-  }
-}
-
-.border-top-primary-300 {
-  border-top: 12px solid $primary-300;
-}
-
 $program-border-width: .25rem;
 $program-bullet-size: 1rem;
 $program-bullet-top: 1.8rem - $program-bullet-size;
-$program-title-padding: getSizedValue(7) + getSizedValue(5);
+$program-title-padding: 40px;
 
 .program-left,
 .program-right {
@@ -434,20 +311,16 @@ $program-title-padding: getSizedValue(7) + getSizedValue(5);
     background: $primary-200;
   }
 
-  h1 {
+  h4 {
     font-weight: normal;
-
-    .strong,
-    &.strong {
-      display: inline-block;
-      position: relative;
-      z-index: 9;
-      padding: .05rem 0;
-      border-bottom: .15rem solid $primary-200;
-      // border-radius: 999999px;
-      background: $grey-100;
-      // box-shadow: $shadow-header;
-    }
+    display: inline-block;
+    position: relative;
+    z-index: 9;
+    padding: .4rem 0;
+    border-bottom: .15rem solid $primary-200;
+    // border-radius: 999999px;
+    background: white;
+    // box-shadow: $shadow-header;
   }
 }
 
@@ -460,14 +333,11 @@ $program-title-padding: getSizedValue(7) + getSizedValue(5);
     right: -#{$program-bullet-size / 2};
   }
 
-  h1 {
-    .strong,
-    &.strong {
-      margin-right: -$program-title-padding;
-      padding-right: $program-title-padding;
-      border-top-right-radius: 99999px;
-      border-bottom-right-radius: 99999px;
-    }
+  h4 {
+    margin-right: -$program-title-padding;
+    padding-right: $program-title-padding;
+    border-top-right-radius: 99999px;
+    border-bottom-right-radius: 99999px;
   }
 }
 
@@ -480,20 +350,19 @@ $program-title-padding: getSizedValue(7) + getSizedValue(5);
     left: -#{$program-bullet-size / 2};
   }
 
-  h1 {
-    .strong,
-    &.strong {
-      margin-left: -$program-title-padding;
-      padding-left: $program-title-padding;
-      border-top-left-radius: 99999px;
-      border-bottom-left-radius: 99999px;
-    }
+  h4 {
+    margin-left: -$program-title-padding;
+    padding-left: $program-title-padding;
+    border-top-left-radius: 99999px;
+    border-bottom-left-radius: 99999px;
   }
 }
 
 .program-padded {
+  padding-top: 4.4rem;
+
   &::after {
-    top: getSizedValue(10) + $program-bullet-top;
+    top: 5.2rem;
   }
 }
 
@@ -506,11 +375,25 @@ $program-last-bullet-border-width: .25rem;
     content: '';
     position: absolute;
     top: 0;
-    left: calc(50% - #{$program-bullet-size / 2 + $program-last-bullet-border-width});
+    left: calc(50% - 0.45rem);
     height: $program-bullet-size;
     width: $program-bullet-size;
     border: $program-last-bullet-border-width solid $primary-200;
     border-radius: 50%;
     background: $grey-100;
+  }
+}
+
+#video {
+  position: relative;
+  height: 80vh;
+  max-height: 800px;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
   }
 }

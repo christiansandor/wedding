@@ -1,47 +1,4 @@
 @import "colors";
-@import "modifiers";
-
-@keyframes previous-letter {
-  0% {
-    z-index: 2;
-    transform: none;
-  }
-
-  50% {
-    z-index: 2;
-    transform: translateY(5px) translateX(-60%) rotateZ(-9deg);
-  }
-
-  51% {
-    z-index: 1;
-  }
-
-  100% {
-    z-index: 1;
-    transform: translateY(3px) translateX(-15px) rotateZ(-3deg);
-  }
-}
-
-@keyframes next-letter {
-  0% {
-    z-index: 1;
-    transform: translateY(3px) translateX(10px) rotateZ(2deg);
-  }
-
-  50% {
-    z-index: 1;
-    transform: translateY(5px) translateX(60%) rotateZ(4deg);
-  }
-
-  51% {
-    z-index: 2;
-  }
-
-  100% {
-    z-index: 2;
-    transform: none;
-  }
-}
 
 #rsvp {
   display: flex;
@@ -53,7 +10,7 @@
   text-align: center;
   overflow: hidden;
   background: $grey-900;
-  
+
   .background {
     display: block;
     position: absolute;
@@ -80,11 +37,10 @@
   width: 100%;
   max-width: 460px;
   border-radius: 5px;
-  padding: getSizedValue(4) getSizedValue(8);
+  padding: 12px 20px;
   transition: transform .3s ease;
   transform: none;
   background: $light;
-  box-shadow: $shadow-lg;
   overflow: hidden;
 
   &::before {
@@ -138,9 +94,8 @@
 .quote {
   display: block;
   position: relative;
-  padding: getSizedValue(4);
+  padding: 12px;
   color: $grey-600;
-  font-size: getFontSize(1);
 
   &::before,
   &::after {
