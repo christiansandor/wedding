@@ -278,6 +278,12 @@ main:not(#hero) {
   width: 80px;
   border-radius: 100%;
   background: $grey-300 no-repeat center center / cover;
+
+  @include desktop {
+    flex-basis: 120px;
+    height: 120px;
+    width: 120px;
+  }
 }
 
 $program-border-width: .25rem;
