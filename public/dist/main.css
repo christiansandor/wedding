@@ -21,9 +21,6 @@
     width: 100%;
     opacity: .2;
     background: url("/public/images/mink_2.jpg") no-repeat center center/cover; }
-    @media only screen and (min-width: 768px) {
-      #rsvp .background {
-        transform: translateZ(-1px) scale(2); } }
 
 #letter {
   display: block;
@@ -233,11 +230,6 @@ main:not(#hero) {
     width: 100%;
     opacity: 1;
     background: no-repeat center center / cover; }
-    @media only screen and (min-width: 768px) {
-      #hero .background,
-      #hero .background-1,
-      #hero .background-2 {
-        transform: translateZ(-1px) scale(2); } }
   #hero .background {
     z-index: 3;
     background-image: url("/public/images/mink.jpg"); }
@@ -250,7 +242,6 @@ main:not(#hero) {
       #hero .background-1 {
         display: block;
         z-index: 2;
-        transform: translateZ(-1.7px) scale(2.7);
         background-image: url("/public/images/mink_hatter_1.png"); } }
   #hero .background-2 {
     display: none; }
@@ -258,7 +249,6 @@ main:not(#hero) {
       #hero .background-2 {
         display: block;
         z-index: 1;
-        transform: translateZ(-2px) scale(3);
         background-image: url("/public/images/mink_hatter_2.png"); } }
   #hero::before {
     display: block;

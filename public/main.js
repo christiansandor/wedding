@@ -21,3 +21,9 @@ $window.scroll(_ => {
         isActive = false;
     }
 });
+
+if (window.innerWidth >= 768 && navigator.userAgent.indexOf('Chrome') !== -1) {
+    $('.background').css('transform', 'translateZ(-1px) scale(2)');
+    $('.background-1').css('transform', 'translateZ(-1.7px) scale(2.7)');
+    $('.background-2').css('transform', 'translateZ(-2px) scale(3)');
+}

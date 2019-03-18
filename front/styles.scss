@@ -175,10 +175,6 @@ main:not(#hero) {
     width: 100%;
     opacity: 1;
     background: no-repeat center center / cover;
-
-    @include desktop {
-      transform: translateZ(-1px) scale(2);
-    }
   }
 
   .background {
@@ -196,7 +192,6 @@ main:not(#hero) {
     @include desktop {
       display: block;
       z-index: 2;
-      transform: translateZ(-1.7px) scale(2.7);
       background-image: url("/public/images/mink_hatter_1.png");
     }
   }
@@ -207,7 +202,6 @@ main:not(#hero) {
     @include desktop {
       display: block;
       z-index: 1;
-      transform: translateZ(-2px) scale(3);
       background-image: url("/public/images/mink_hatter_2.png");
     }
   }
